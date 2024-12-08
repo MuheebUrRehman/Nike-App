@@ -76,21 +76,17 @@ export default function AllProducts() {
             <div>
               <div className="flex flex-col  gap-2 py-10">
                 <h3 className="">Shoes</h3>
-                <h3 >Sports Bras</h3>
-                <h3 >Tops & T-Shirts</h3>
-                <h3 >
-                  Hoodies & Sweatshirts
-                </h3>
-                <h3 >Jackets</h3>
+                <h3>Sports Bras</h3>
+                <h3>Tops & T-Shirts</h3>
+                <h3>Hoodies & Sweatshirts</h3>
+                <h3>Jackets</h3>
                 <h3>Trousers & Tights</h3>
-                <h3 >Shorts</h3>
-                <h3 >Tracksuits</h3>
-                <h3 >Jumpsuits & Rompers</h3>
-                <h3 >Skirts & Dresses</h3>
-                <h3 >Socks</h3>
-                <h3>
-                  Accessories & Equipment
-                </h3>
+                <h3>Shorts</h3>
+                <h3>Tracksuits</h3>
+                <h3>Jumpsuits & Rompers</h3>
+                <h3>Skirts & Dresses</h3>
+                <h3>Socks</h3>
+                <h3>Accessories & Equipment</h3>
               </div>
 
               <div className="py-5 border-t-[1px]">
@@ -115,21 +111,15 @@ export default function AllProducts() {
                 </div>
                 <div className="flex gap-1 mt-3 ">
                   <input type="checkbox" name="" id="" placeholder="" />
-                  <label htmlFor="" >
-                    Men
-                  </label>
+                  <label htmlFor="">Men</label>
                 </div>
                 <div className="flex gap-1 ">
                   <input type="checkbox" name="" id="" placeholder="" />
-                  <label htmlFor="" >
-                    Women
-                  </label>
+                  <label htmlFor="">Women</label>
                 </div>
                 <div className="flex gap-1 ">
                   <input type="checkbox" name="" id="" placeholder="" />
-                  <label htmlFor="" >
-                    Unisex
-                  </label>
+                  <label htmlFor="">Unisex</label>
                 </div>
               </div>
 
@@ -155,15 +145,11 @@ export default function AllProducts() {
                 </div>
                 <div className="flex gap-1 mt-3 ">
                   <input type="checkbox" name="" id="" placeholder="" />
-                  <label htmlFor="">
-                    Boys
-                  </label>
+                  <label htmlFor="">Boys</label>
                 </div>
                 <div className="flex gap-1 ">
                   <input type="checkbox" name="" id="" placeholder="" />
-                  <label htmlFor="" >
-                    Girls
-                  </label>
+                  <label htmlFor="">Girls</label>
                 </div>
               </div>
               <div className="py-5 border-t-[1px]">
@@ -188,20 +174,16 @@ export default function AllProducts() {
                 </div>
                 <div className="flex gap-1 mt-3 ">
                   <input type="checkbox" name="" id="" placeholder="" />
-                  <label htmlFor="">
-                    Under ₹ 2 500.00
-                  </label>
+                  <label htmlFor="">Under ₹ 2 500.00</label>
                 </div>
                 <div className="flex gap-1 ">
                   <input type="checkbox" name="" id="" placeholder="" />
-                  <label htmlFor="" >
-                    ₹ 2 501.00 - ₹
-                  </label>
+                  <label htmlFor="">₹ 2 501.00 - ₹</label>
                 </div>
               </div>
             </div>
           </aside>
-          <div className="grid grid-cols-3 gap-3 ml-9 mt-6 border-b-2 border-[#E5E5E5] pb-28">
+          <div className="grid grid-cols-2 md:grid-cols-3 w-[100%] place-content-center gap-3 ml-9 mt-6 border-b-2 border-[#E5E5E5] pb-28">
             <div>
               <Image
                 src="/product1.png"
@@ -237,7 +219,7 @@ export default function AllProducts() {
                   Just In
                 </h3>
                 <h3 className="font-medium text-[15px] ">
-                Nike Court Vision Low Next Nature
+                  Nike Court Vision Low Next Nature
                 </h3>
                 <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
                 <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
@@ -261,7 +243,7 @@ export default function AllProducts() {
                   href="/productdetail"
                   className="font-medium text-[15px] "
                 >
-                 Nike Air Force 1 PLT.AF.ORM
+                  Nike Air Force 1 PLT.AF.ORM
                 </Link>
                 <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
                 <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
@@ -403,40 +385,40 @@ export default function AllProducts() {
           </div>
         </div>
         <div className=" w-[78%] flex flex-col ml-auto my-10">
-        <h2 className="font-medium text-xl">Related Categories</h2>
-        <div className="flex gap-2 mt-6 flex-wrap ">
-          <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
-            Best Selling Products
-          </button>
-          <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
-            Best Shoes
-          </button>
-          <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
-            New Basketball Shoes
-          </button>
-          <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
-            New Football Shoes
-          </button>
-          <button className="w-[139px] h-[34px] rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
-            New Men's Shoes
-          </button>
-          <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
-            New Running Shoes
-          </button>
-          <button className="px-5 py-2 rounded-[20px] border-[#CCCCCC] border-[0.5px] text-xs">
-            Best Men's Shoes
-          </button>
-          <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
-            New Jordan Shoes
-          </button>
-          <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
-            Best Women's Shoes
-          </button>
-          <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
-            Best Training & Gym
-          </button>
+          <h2 className="font-medium text-xl">Related Categories</h2>
+          <div className="flex gap-2 mt-6 flex-wrap ">
+            <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
+              Best Selling Products
+            </button>
+            <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
+              Best Shoes
+            </button>
+            <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
+              New Basketball Shoes
+            </button>
+            <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
+              New Football Shoes
+            </button>
+            <button className="w-[139px] h-[34px] rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
+              New Men's Shoes
+            </button>
+            <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
+              New Running Shoes
+            </button>
+            <button className="px-5 py-2 rounded-[20px] border-[#CCCCCC] border-[0.5px] text-xs">
+              Best Men's Shoes
+            </button>
+            <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
+              New Jordan Shoes
+            </button>
+            <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
+              Best Women's Shoes
+            </button>
+            <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">
+              Best Training & Gym
+            </button>
+          </div>
         </div>
-      </div>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ export default function Essentials() {
     <section className="w-screen">
       <div className="w-[95%] mx-auto flex flex-col gap-3">
         <h2 className="font-medium text-2xl ">The Essentials</h2>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <div className="relative">
             <Image
               src="/essential1.png"

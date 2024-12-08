@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function LoginSec() {
   return (
     <section className="w-screen">
-      <div className="flex flex-col w-[24%] gap-4 items-center mx-auto my-10">
+      <div className="flex flex-col w-[70%] sm:w-[24%] gap-4 items-center mx-auto my-10">
         <div>
           <img src="\loginsec1.png" alt="" className="w-[100%]" />
         </div>

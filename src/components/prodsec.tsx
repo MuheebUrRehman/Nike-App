@@ -2,7 +2,7 @@ import Image from "next/image";
 export default function ProdSec() {
   return (
     <section className="w-screen">
-      <div className="flex justify-around w-[95%] mx-auto mt-12 mb-52 ">
+      <div className="flex md:flex-row justify-around flex-col items-center  w-[95%] mx-auto mt-12 mb-52 ">
         <div className="w-[653px] h-[653px]">
           <Image
             src="/prodsec1.png"
@@ -13,7 +13,7 @@ export default function ProdSec() {
           />
         </div>
 
-        <div className=" flex flex-col gap-9 w-[30%] ">
+        <div className=" flex flex-col gap-9 w-[80%] mt-10 md:w-[30%] md:m-0 ">
           <h1 className="text-5xl font-medium">Nike Air Force 1 PLT.AF.ORM</h1>
           <p >
             Turn style on its head with this crafted take on the Air Jordan 1

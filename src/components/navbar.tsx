@@ -31,7 +31,11 @@ export default function Navbar() {
             </defs>
           </svg>
         </Link>
-        <div className="flex w-[40%] justify-between text-lg font-medium">
+        <div className="flex w-[40%] justify-center md:justify-between text-lg font-medium collapse md:visible ">
+          <button className="py-2 px-7 bg-[#E5E5E5] rounded-3xl  visible md:hidden">
+            {" "}
+            menu
+          </button>
           <Link href="#">New & featured</Link>
           <Link href="#">Men</Link>
           <Link href="#">Women</Link>
@@ -40,7 +44,7 @@ export default function Navbar() {
           <Link href="#">SNKRS</Link>
         </div>
         <div className="flex justify-between w-[20%] items-center">
-          <div className="w-[65%] h-[40px] bg-[#F5F5F5] rounded-[100px] flex items-center justify-between gap-3 overflow-hidden px-2">
+          <div className="md:w-[65%] w-[100%] h-[40px] bg-[#F5F5F5] rounded-[100px] flex items-center justify-between gap-3 overflow-hidden px-2">
             <div className=" h-[36px] flex justify-center items-center">
               <svg
                 width="24"
@@ -66,7 +70,7 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="Search"
-              className="font-medium text-[#CCCCCC] text-[15px] bg-transparent"
+              className="font-medium text-[#CCCCCC] w-[100%] bg-transparent"
             />
           </div>
           <div className="  flex justify-center items-center">

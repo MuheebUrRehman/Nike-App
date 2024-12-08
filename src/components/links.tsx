@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function Links() {
   return (
     <section className="w-screen">
-      <div className="w-[70%] mx-auto grid grid-cols-4 my-12">
+      <div className="w-[70%] mx-auto grid grid-cols-2 gap-4 md:grid-cols-4 my-12">
         <div className="font-medium text-[15px] flex flex-col gap-3">
           <h3>Icons</h3>
           <Link href="" className="text-[#757575] font-medium text-[15px]">

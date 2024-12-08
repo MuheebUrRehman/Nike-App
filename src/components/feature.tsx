@@ -17,14 +17,14 @@ export default function Feature() {
           <h3 className="font-medium text-[54px] text-center ">
             STEP INTO WHAT FEELS GOOD
           </h3>
-          <h3 className="">
+          <h3 className="text-center">
             Cause everyone should know the feeling of running in that perfect
             pair.
           </h3>
 
           <Link
             href="/products"
-            className="px-5 py-2 bg-[#111111] rounded-[30px] text-white"
+            className="px-5 py-2 text-center bg-[#111111] rounded-[30px] text-white"
           >
             Find Your Shoe
           </Link>

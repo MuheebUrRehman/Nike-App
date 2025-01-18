@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function AllProducts() {
+import { urlFor } from "@/sanity/lib/image";
+export default function AllProducts({ data }: { data: products }) {
   return (
     <section className="w-screen">
       <div className="w-[95%] mx-auto">
@@ -186,7 +187,7 @@ export default function AllProducts() {
           <div className="grid grid-cols-2 md:grid-cols-3 w-[100%] place-content-center gap-3 ml-9 mt-6 border-b-2 border-[#E5E5E5] pb-28">
             <div>
               <Image
-                src="/product1.png"
+                src={urlFor(data.image).url()}
                 width={592}
                 height={592}
                 alt="product1"
@@ -198,11 +199,11 @@ export default function AllProducts() {
                   Just In
                 </h3>
                 <h3 className="font-medium text-[15px] ">
-                  Nike Air Force 1 Mid '07
+                {data.productName}
                 </h3>
-                <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
-                <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
-                <h3 className="font-medium text-[15px] ">MRP : ₹ 10 795.00</h3>
+                <h3 className="text-[#757575] text-[15px] ">{data.category}</h3>
+                <h3 className="text-[#757575] text-[15px] ">{data.colors}</h3>
+                <h3 className="font-medium text-[15px] ">MRP : ₹ {data.price}</h3>
               </div>
             </div>
             <div>
@@ -219,7 +220,7 @@ export default function AllProducts() {
                   Just In
                 </h3>
                 <h3 className="font-medium text-[15px] ">
-                  Nike Court Vision Low Next Nature
+                  {data.productName}
                 </h3>
                 <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
                 <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>

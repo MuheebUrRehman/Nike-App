@@ -1,15 +1,15 @@
-import ProdHeader from "@/components/prodHead";
+import Header from "@/components/header";
 import Navbar from "@/components/navbar";
-import ProdSec from "@/components/prodsec";
+import ContactUs from "@/components/contactus";
 import Footer from "@/components/footer";
 
-export default function ProductDetail() {
+export default function Login() {
   return (
     <>
-      <ProdHeader />
+      <Header />
       <Navbar />
       <main>
-        <ProdSec />
+        <ContactUs />
       </main>
       <Footer />
     </>

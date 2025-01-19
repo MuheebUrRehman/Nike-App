@@ -1,8 +1,9 @@
 import Image from "next/image";
+
 export default function Best() {
   return (
     <section className="w-screen">
-      <div className="w-[95%] mx-auto my-10">
+      <div className="md:w-[95%] mx-auto w-6/12 my-10">
         <div className="flex  justify-between items-center ">
           <h3 className="font-medium text-[22px]">Best of Air Max</h3>
           <div className="flex justify-center gap-3 items-center">
@@ -51,9 +52,9 @@ export default function Best() {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           <div>
-            <img src="\best1.png" alt="" />
+            <Image width={441} height={441} src="/best1.png" alt="" />
             <div className="flex justify-between">
               <div className="flex flex-col">
                 <h3 className="font-medium text-[15px]">Nike Air Max Pulse</h3>
@@ -63,30 +64,23 @@ export default function Best() {
             </div>
           </div>
           <div>
-            <img src="\best2.png" alt="" />
+            <Image width={441} height={441} src="/best1.png" alt="" />
             <div className="flex justify-between">
               <div className="flex flex-col">
                 <h3 className="font-medium text-[15px]">Nike Air Max Pulse</h3>
-                <h5 className="text-[#757575] text-[15px]">Men's Shoes</h5>
+                <h5 className="text-[#757575] text-[15px]">Women's Shoes</h5>
               </div>
               <h3 className=" font-medium text-[15px]">₹ 13 995</h3>
             </div>
           </div>
           <div>
-            <Image
-              src="/best3.png"
-              width={441}
-              height={441}
-              alt="Picture of the author"
-              layout="responsive"
-            />
-            
+            <Image width={441} height={441} src="/best1.png" alt="" />
             <div className="flex justify-between">
               <div className="flex flex-col">
-                <h3 className="font-medium text-[15px]">Nike Air Max 97 SE</h3>
-                <h5 className="text-[#757575] text-[15px]">Men's Shoes</h5>
+                <h3 className="font-medium text-[15px]">Nike Air Max Pulse</h3>
+                <h5 className="text-[#757575] text-[15px]">Women's Shoes</h5>
               </div>
-              <h3 className=" font-medium text-[15px]">₹ 16 995</h3>
+              <h3 className=" font-medium text-[15px]">₹ 13 995</h3>
             </div>
           </div>
         </div>

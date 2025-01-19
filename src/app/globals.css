@@ -11,3 +11,7 @@
 body {
   font-family: "Helvetica Neue", sans-serif;
 }
+
+input:focus {
+  color: black;
+}

@@ -3,15 +3,15 @@ import Navbar from "@/components/navbar";
 import LoginSec from "@/components/loginsec";
 import Footer from "@/components/footer";
 
-export default function Login(){
-return(
+export default function Login() {
+  return (
     <>
-    <Header/>
-    <Navbar/>
-    <main>
-        <LoginSec/>
-    </main>
-    <Footer/>
+      <Header />
+      <Navbar />
+      <main>
+        <LoginSec />
+      </main>
+      <Footer />
     </>
-)
+  );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="bg-[#F5F5F5] w-screen">
@@ -17,7 +18,7 @@ export default function Header() {
             />
           </svg>
         </div>
-        <div className="flex ">
+        <div className="flex">
           <Link
             href="#"
             className="font-medium text-[11px] border-r-[1px] border-black px-3"

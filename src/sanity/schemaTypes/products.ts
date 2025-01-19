@@ -47,5 +47,13 @@ export const productSchema = {
         title: 'Description',
         type: 'text',
       },
+      {
+        name: "slug",
+        type: "slug",
+        title: "Slug",
+        options: {
+          source: "productName",
+        },
+      },
     ],
   }

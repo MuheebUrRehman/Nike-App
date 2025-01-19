@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 export default function Essentials() {
   return (
     <section className="w-screen">
@@ -13,7 +14,6 @@ export default function Essentials() {
               alt="Picture of the author"
               layout="responsive"
             />
-
             <button className="absolute bottom-10 left-10 py-2 px-5 rounded-3xl bg-white">
               Men's
             </button>

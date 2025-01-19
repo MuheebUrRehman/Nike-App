@@ -1,11 +1,21 @@
+import Image from "next/image";
+
 export default function Miss() {
   return (
     <section>
       <div className="w-[95%] mx-auto">
         <h2 className="font-medium text-[22px] mb-4">Don't Miss</h2>
-        <img src="\miss1.png" alt="" className="w-[100%]" />
+        <Image
+          src="/miss1.png"
+          width={1344}
+          height={700}
+          alt="Picture of the author"
+          layout="responsive"
+        />
         <div className="flex flex-col items-center  gap-3 my-6">
-          <h1 className="font-medium text-[52px] text-center">FLIGHT ESSENTIALS</h1>
+          <h1 className="font-medium text-[52px] text-center">
+            FLIGHT ESSENTIALS
+          </h1>
           <h5 className="text-[15px] text-center">
             Your built-to-last, all-week wears—but with style only Jordan Brand
             can deliver.

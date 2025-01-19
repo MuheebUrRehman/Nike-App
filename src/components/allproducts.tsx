@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { urlFor } from "@/sanity/lib/image";
-export default function AllProducts({ data }: { data: products }) {
+import { client } from "@/sanity/lib/client";
+import { products } from "@/app/type";
+import ProductCard from "./productcard";
+
+export default async function AllProducts() {
+  const query = `*[_type == 'product'] | order(_updatedAt asc){productName,category,price,inventory,colors,status,image,description,"slug": slug.current}`;
+  const data: products[] = await client.fetch(query);
+
   return (
     <section className="w-screen">
       <div className="w-[95%] mx-auto">
@@ -72,11 +78,11 @@ export default function AllProducts({ data }: { data: products }) {
             </div>
           </div>
         </div>
-        <div className="flex ">
-          <aside className="w-[25%] hidden md:block">
+        <div className="flex">
+          <aside className="w-[25%]">
             <div>
-              <div className="flex flex-col  gap-2 py-10">
-                <h3 className="">Shoes</h3>
+              <div className="flex flex-col gap-2 py-10">
+                <h3>Shoes</h3>
                 <h3>Sports Bras</h3>
                 <h3>Tops & T-Shirts</h3>
                 <h3>Hoodies & Sweatshirts</h3>
@@ -89,7 +95,6 @@ export default function AllProducts({ data }: { data: products }) {
                 <h3>Socks</h3>
                 <h3>Accessories & Equipment</h3>
               </div>
-
               <div className="py-5 border-t-[1px]">
                 <div className="flex items-center justify-between">
                   <h3 className="font-medium">Gender</h3>
@@ -123,7 +128,6 @@ export default function AllProducts({ data }: { data: products }) {
                   <label htmlFor="">Unisex</label>
                 </div>
               </div>
-
               <div className="py-5 border-t-[1px]">
                 <div className="flex items-center justify-between">
                   <h3 className="font-medium">Kids</h3>
@@ -185,204 +189,9 @@ export default function AllProducts({ data }: { data: products }) {
             </div>
           </aside>
           <div className="grid grid-cols-2 md:grid-cols-3 w-[100%] place-content-center gap-3 ml-9 mt-6 border-b-2 border-[#E5E5E5] pb-28">
-            <div>
-              <Image
-                src={urlFor(data.image).url()}
-                width={592}
-                height={592}
-                alt="product1"
-                layout="responsive"
-              />
-
-              <div>
-                <h3 className="font-medium text-[15px] text-[#9E3500]">
-                  Just In
-                </h3>
-                <h3 className="font-medium text-[15px] ">
-                {data.productName}
-                </h3>
-                <h3 className="text-[#757575] text-[15px] ">{data.category}</h3>
-                <h3 className="text-[#757575] text-[15px] ">{data.colors}</h3>
-                <h3 className="font-medium text-[15px] ">MRP : ₹ {data.price}</h3>
-              </div>
-            </div>
-            <div>
-              <Image
-                src="/product2.png"
-                width={592}
-                height={592}
-                alt="product1"
-                layout="responsive"
-              />
-
-              <div>
-                <h3 className="font-medium text-[15px] text-[#9E3500]">
-                  Just In
-                </h3>
-                <h3 className="font-medium text-[15px] ">
-                  {data.productName}
-                </h3>
-                <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
-                <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
-                <h3 className="font-medium text-[15px] ">MRP : ₹ 4 995.00</h3>
-              </div>
-            </div>
-            <div>
-              <Image
-                src="/product3.png"
-                width={592}
-                height={592}
-                alt="product1"
-                layout="responsive"
-              />
-
-              <div>
-                <h3 className="font-medium text-[15px] text-[#9E3500]">
-                  Just In
-                </h3>
-                <Link
-                  href="/productdetail"
-                  className="font-medium text-[15px] "
-                >
-                  Nike Air Force 1 PLT.AF.ORM
-                </Link>
-                <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
-                <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
-                <h3 className="font-medium text-[15px] ">MRP : ₹ 8 695.00</h3>
-              </div>
-            </div>
-            <div>
-              <Image
-                src="/product1.png"
-                width={592}
-                height={592}
-                alt="product1"
-                layout="responsive"
-              />
-
-              <div>
-                <h3 className="font-medium text-[15px] text-[#9E3500]">
-                  Just In
-                </h3>
-                <h3 className="font-medium text-[15px] ">
-                  Nike Air Force 1 Mid '07
-                </h3>
-                <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
-                <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
-                <h3 className="font-medium text-[15px] ">MRP : ₹ 10 795.00</h3>
-              </div>
-            </div>
-            <div>
-              <Image
-                src="/product1.png"
-                width={592}
-                height={592}
-                alt="product1"
-                layout="responsive"
-              />
-
-              <div>
-                <h3 className="font-medium text-[15px] text-[#9E3500]">
-                  Just In
-                </h3>
-                <h3 className="font-medium text-[15px] ">
-                  Nike Air Force 1 Mid '07
-                </h3>
-                <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
-                <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
-                <h3 className="font-medium text-[15px] ">MRP : ₹ 10 795.00</h3>
-              </div>
-            </div>
-            <div>
-              <Image
-                src="/product1.png"
-                width={592}
-                height={592}
-                alt="product1"
-                layout="responsive"
-              />
-
-              <div>
-                <h3 className="font-medium text-[15px] text-[#9E3500]">
-                  Just In
-                </h3>
-                <Link
-                  href="/productdetail"
-                  className="font-medium text-[15px] "
-                >
-                  Nike Air Force 1 Mid '07
-                </Link>
-                <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
-                <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
-                <h3 className="font-medium text-[15px] ">MRP : ₹ 10 795.00</h3>
-              </div>
-            </div>
-            <div>
-              <Image
-                src="/product1.png"
-                width={592}
-                height={592}
-                alt="product1"
-                layout="responsive"
-              />
-
-              <div>
-                <h3 className="font-medium text-[15px] text-[#9E3500]">
-                  Just In
-                </h3>
-                <h3 className="font-medium text-[15px] ">
-                  Nike Air Force 1 Mid '07
-                </h3>
-                <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
-                <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
-                <h3 className="font-medium text-[15px] ">MRP : ₹ 10 795.00</h3>
-              </div>
-            </div>
-            <div>
-              <Image
-                src="/product1.png"
-                width={592}
-                height={592}
-                alt="product1"
-                layout="responsive"
-              />
-
-              <div>
-                <h3 className="font-medium text-[15px] text-[#9E3500]">
-                  Just In
-                </h3>
-                <h3 className="font-medium text-[15px] ">
-                  Nike Air Force 1 Mid '07
-                </h3>
-                <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
-                <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
-                <h3 className="font-medium text-[15px] ">MRP : ₹ 10 795.00</h3>
-              </div>
-            </div>
-            <div>
-              <Image
-                src="/product1.png"
-                width={592}
-                height={592}
-                alt="product1"
-                layout="responsive"
-              />
-
-              <div>
-                <h3 className="font-medium text-[15px] text-[#9E3500]">
-                  Just In
-                </h3>
-                <Link
-                  href="/productdetail"
-                  className="font-medium text-[15px] "
-                >
-                  Nike Air Force 1 Mid '07
-                </Link>
-                <h3 className="text-[#757575] text-[15px] ">Men's Shoes</h3>
-                <h3 className="text-[#757575] text-[15px] ">1 Colour</h3>
-                <h3 className="font-medium text-[15px] ">MRP : ₹ 10 795.00</h3>
-              </div>
-            </div>
+            {data.map((item) => {
+              return <ProductCard {...item} />;
+            })}
           </div>
         </div>
         <div className=" w-[78%] flex flex-col ml-auto my-10">

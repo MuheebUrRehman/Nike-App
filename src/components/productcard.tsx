@@ -1,0 +1,30 @@
+import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
+import { products } from "@/app/type";
+import Link from "next/link";
+
+export default function ProductCard(data: products) {
+  return (
+    <div>
+      <Image
+        src={urlFor(data.image).url()}
+        width={592}
+        height={592}
+        alt="product1"
+        layout="responsive"
+      />
+      <div>
+        <h3 className="font-medium text-[15px] text-[#9E3500]">Just In</h3>
+        <Link
+          href={`/productdetiel/${data.slug}`}
+          className="font-medium text-[15px] "
+        >
+          {data.productName}
+        </Link>
+        <h3 className="text-[#757575] text-[15px] ">{data.category}</h3>
+        <h3 className="text-[#757575] text-[15px] ">{data.colors}</h3>
+        <h3 className="font-medium text-[1F5px] ">MRP : ₹ {data.price}</h3>
+      </div>
+    </div>
+  );
+}

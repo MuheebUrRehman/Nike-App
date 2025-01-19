@@ -1,8 +1,9 @@
 import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="w-screen">
-      <div className="w-[95%]  mx-auto ">
+      <div className="w-[95%] mx-auto ">
         <div className="flex justify-center items-center">
           <Image
             src="/hero1.png"
@@ -11,7 +12,6 @@ export default function Hero() {
             alt="Picture of the author"
             layout="responsive"
           />
-          {/* <img src="\hero1.png" alt="" className="w-full h-auto"/> */}
         </div>
         <div className="flex flex-col items-center my-10 gap-3">
           <div>

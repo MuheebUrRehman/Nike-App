@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 export default function Gear() {
   return (
     <section className="w-screen">
@@ -62,7 +63,6 @@ export default function Gear() {
                   alt="Picture of the author"
                   layout="responsive"
                 />
-              
                 <div className="flex justify-between">
                   <div className="flex flex-col">
                     <h3 className="font-medium text-[15px]">
@@ -84,7 +84,6 @@ export default function Gear() {
                   alt="Picture of the author"
                   layout="responsive"
                 />
-                
                 <div className="flex justify-between">
                   <div className="flex flex-col">
                     <h3 className="font-medium text-[15px]">
@@ -157,7 +156,6 @@ export default function Gear() {
                   alt="Picture of the author"
                   layout="responsive"
                 />
-            
                 <div className="flex justify-between">
                   <div className="flex flex-col">
                     <h3 className="font-medium text-[15px]">
@@ -179,7 +177,6 @@ export default function Gear() {
                   alt="Picture of the author"
                   layout="responsive"
                 />
-              
                 <div className="flex justify-between">
                   <div className="flex flex-col">
                     <h3 className="font-medium text-[15px]">

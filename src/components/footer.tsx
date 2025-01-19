@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-black w-screen">
@@ -136,7 +137,6 @@ export default function Footer() {
                 </clipPath>
               </defs>
             </svg>
-
             <h3 className="text-[12px] text-white">India</h3>
           </div>
           <h3 className="text-xs text-[#7E7E7E]">

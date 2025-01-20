@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import { products } from "@/app/type";
 import BestProductCard from "./bestproductcard";
+import { useState, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -9,9 +10,17 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export default async function Best() {
-  const query = `*[_type == 'product'] | order(_updatedAt asc){productName,category,price,inventory,colors,status,image,description,"slug": slug.current}`;
-  const data: products[] = await client.fetch(query);
+export default function Best() {
+  const [data, setData] = useState<products[]>([]);
+
+  useEffect(() => {
+    const query = `*[_type == 'product'] | order(_updatedAt asc){productName,category,price,inventory,colors,status,image,description,"slug": slug.current}`;
+    const fetchData = async () => {
+      const result: products[] = await client.fetch(query);
+      setData(result);
+    };
+    fetchData();
+  }, []);
 
   return (
     <section className="w-screen">

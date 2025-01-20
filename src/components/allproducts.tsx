@@ -1,11 +1,23 @@
 import { client } from "@/sanity/lib/client";
 import { products } from "@/app/type";
 import ProductCard from "./productcard";
+import { useState, useEffect } from "react";
 
-export default async function AllProducts() {
-  const query = `*[_type == 'product'] | order(_updatedAt asc){productName,category,price,inventory,colors,status,image,description,"slug": slug.current}`;
-  const data: products[] = await client.fetch(query);
+export default function AllProducts() {
+  // const query = `*[_type == 'product'] | order(_updatedAt asc){productName,category,price,inventory,colors,status,image,description,"slug": slug.current}`;
+  // const data: products[] = await client.fetch(query);
 
+  const [data, setData] = useState<products[]>([]);
+  
+  useEffect(() => {
+    const query = `*[_type == 'product'] | order(_updatedAt asc){productName,category,price,inventory,colors,status,image,description,"slug": slug.current}`;
+    const fetchData = async () => {
+      const result: products[] = await client.fetch(query);
+      setData(result);
+    };
+    fetchData();
+  }, []); 
+  
   return (
     <section className="w-screen">
       <div className="w-[95%] mx-auto">

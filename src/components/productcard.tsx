@@ -4,14 +4,18 @@ import { products } from "@/app/type";
 import Link from "next/link";
 
 export default function ProductCard(data: products) {
+  const img = urlFor(data.image).format("webp").url();
   return (
     <div>
       <Image
-        src={urlFor(data.image).url()}
+        src={img}
         width={592}
         height={592}
         alt="product1"
         layout="responsive"
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,[base64String]"
+        quality={75}
       />
       <div>
         <h3 className="font-medium text-[15px] text-[#9E3500]">Just In</h3>

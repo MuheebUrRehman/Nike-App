@@ -13,6 +13,8 @@ export default function Essentials() {
               height={540}
               alt="Picture of the author"
               layout="responsive"
+              priority={true}
+              loading="eager"
             />
             <button className="absolute bottom-10 left-10 py-2 px-5 rounded-3xl bg-white">
               Men's

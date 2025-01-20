@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import { products } from "@/app/type";
 import ProductCard from "./productcard";
@@ -15,6 +13,7 @@ export default async function AllProducts() {
           <h1 className="font-medium text-2xl">New (500)</h1>
           <div className="flex gap-5">
             <div className="flex items-center gap-1">
+              
               <h3>Hide Filters</h3>
               <svg
                 width="25"
@@ -189,8 +188,8 @@ export default async function AllProducts() {
             </div>
           </aside>
           <div className="grid grid-cols-2 md:grid-cols-3 w-[100%] place-content-center gap-3 ml-9 mt-6 border-b-2 border-[#E5E5E5] pb-28">
-            {data.map((item) => {
-              return <ProductCard {...item} />;
+            {data.map((data) => {
+              return <ProductCard {...data} />;
             })}
           </div>
         </div>

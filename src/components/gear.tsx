@@ -62,6 +62,8 @@ export default function Gear() {
                   height={300}
                   alt="Picture of the author"
                   layout="responsive"
+                  priority={true}
+                  loading="eager"
                 />
                 <div className="flex justify-between">
                   <div className="flex flex-col">

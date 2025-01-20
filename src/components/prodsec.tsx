@@ -1,30 +1,28 @@
 import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
+import { products } from "@/app/type";
 
-export default function ProdSec() {
+export default function ProdSec(data: products) {
+  const img = urlFor(data.image).format("webp").url();
   return (
     <section className="w-screen">
       <div className="flex md:flex-row justify-around flex-col items-center w-[95%] mx-auto mt-12 mb-52 ">
         <div className="w-[325px] h-[325px] md:w-[653px] md:h-[653px]">
           <Image
-            src="/prodsec1.png"
+            src={img}
             width={653}
             height={653}
-            alt="prodsec1"
+            alt="product1"
             layout="responsive"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,[base64String]"
+            quality={80}
           />
         </div>
         <div className=" flex flex-col gap-9 w-[80%] mt-10 md:w-[30%] md:m-0 ">
-          <h1 className="text-5xl font-medium">Nike Air Force 1 PLT.AF.ORM</h1>
-          <p>
-            Turn style on its head with this crafted take on the Air Jordan 1
-            Mid. Its "inside out"-inspired construction, including unique
-            layering and exposed foam accents, ups the ante on this timeless
-            Jordan Brand silhouette. Details like the deco stitching on the
-            Swoosh add coveted appeal, while the unexpected shading, rich
-            mixture of materials and aged midsole aesthetic give this release an
-            artisan finish.
-          </p>
-          <h3 className="font-medium text-4xl">₹ 8 695.00</h3>
+          <h1 className="text-5xl font-medium">{data.productName}</h1>
+          <p>{data.description}</p>
+          <h3 className="font-medium text-4xl">₹ {data.price}</h3>
           <button className="px-5 py-2 rounded-3xl w-[50%] bg-black text-white flex justify-center items-center gap-2">
             {" "}
             <svg

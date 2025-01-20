@@ -91,7 +91,7 @@ export default function JoinSec() {
         </button>
         <div className="flex gap-2">
           <p className="text-xs text-[#8D8D8D]">Already a Member? </p>
-          <Link href="" className="text-xs underline">
+          <Link href="/login" className="text-xs underline">
             Sign In.
           </Link>
         </div>

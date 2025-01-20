@@ -54,7 +54,7 @@ export default function LoginSec() {
         </button>
         <div className="flex gap-2">
           <p className="text-xs text-[#8D8D8D]">Not a Member?</p>
-          <Link href="" className="text-xs underline">
+          <Link href="/join" className="text-xs underline">
             Join Us.
           </Link>
         </div>

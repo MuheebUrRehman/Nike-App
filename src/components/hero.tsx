@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Link from "next/link";
 export default function Hero() {
   return (
     <section className="w-screen">
@@ -11,6 +11,8 @@ export default function Hero() {
             height={700}
             alt="Picture of the author"
             layout="responsive"
+            priority={true}
+            loading="eager"
           />
         </div>
         <div className="flex flex-col items-center my-10 gap-3">
@@ -29,9 +31,13 @@ export default function Hero() {
             <button className="px-5 py-2 bg-[#111111] rounded-[30px] text-white">
               Notify Me
             </button>
-            <button className="px-5 py-2 bg-[#111111] rounded-[30px] text-white">
+
+            <Link
+              href={"/productdetiel/nike-air-force-1-mid-07"}
+              className="px-5 py-2 bg-[#111111] rounded-[30px] text-white"
+            >
               Shop Air Max
-            </button>
+            </Link>
           </div>
         </div>
       </div>

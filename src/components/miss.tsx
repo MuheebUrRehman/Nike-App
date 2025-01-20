@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Link from "next/link";
 export default function Miss() {
   return (
     <section>
@@ -11,6 +11,8 @@ export default function Miss() {
           height={700}
           alt="Picture of the author"
           layout="responsive"
+          priority={true}
+          loading="eager"
         />
         <div className="flex flex-col items-center  gap-3 my-6">
           <h1 className="font-medium text-[52px] text-center">
@@ -21,9 +23,12 @@ export default function Miss() {
             can deliver.
           </h5>
           <div className="flex gap-[6px]">
-            <button className="px-5 py-2 bg-[#111111] rounded-[30px] text-white">
+            <Link
+              href={"/products"}
+              className="px-5 py-2 bg-[#111111] rounded-[30px] text-white"
+            >
               Shop
-            </button>
+            </Link>
           </div>
         </div>
       </div>

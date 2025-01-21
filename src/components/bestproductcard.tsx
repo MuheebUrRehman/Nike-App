@@ -12,9 +12,6 @@ export default function BestProductCard(data: products) {
         height={441}
         src={img}
         alt=""
-        layout="responsive"
-        placeholder="blur"
-        blurDataURL="data:image/jpeg;base64,[base64String]"
         quality={75}
       />
       <div className="flex justify-between">

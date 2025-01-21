@@ -12,9 +12,6 @@ export default function ProductCard(data: products) {
         width={592}
         height={592}
         alt="product1"
-        layout="responsive"
-        placeholder="blur"
-        blurDataURL="data:image/jpeg;base64,[base64String]"
         quality={75}
       />
       <div>

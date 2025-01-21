@@ -10,7 +10,10 @@ export default function Gear() {
             <div>
               <div className="flex justify-end gap-3 items-center">
                 <h4 className="font-medium text-[15px]">Shop</h4>
-                <button className="w-12 h-12 bg-[#F5F5F5] rounded-[24px] flex justify-center items-center">
+                <button
+                  aria-label="previous button"
+                  className="w-12 h-12 bg-[#F5F5F5] rounded-[24px] flex justify-center items-center"
+                >
                   <svg
                     width="25"
                     height="24"
@@ -25,7 +28,10 @@ export default function Gear() {
                     />
                   </svg>
                 </button>
-                <button className="w-12 h-12 bg-[#E5E5E5] rounded-[24px] flex justify-center items-center">
+                <button
+                  aria-label="next button"
+                  className="w-12 h-12 bg-[#E5E5E5] rounded-[24px] flex justify-center items-center"
+                >
                   <svg
                     width="25"
                     height="24"
@@ -61,9 +67,6 @@ export default function Gear() {
                   width={300}
                   height={300}
                   alt="Picture of the author"
-                  layout="responsive"
-                  priority={true}
-                  loading="eager"
                 />
                 <div className="flex justify-between">
                   <div className="flex flex-col">
@@ -84,7 +87,6 @@ export default function Gear() {
                   width={300}
                   height={300}
                   alt="Picture of the author"
-                  layout="responsive"
                 />
                 <div className="flex justify-between">
                   <div className="flex flex-col">
@@ -105,7 +107,10 @@ export default function Gear() {
             <div>
               <div className="flex justify-end gap-3 items-center">
                 <h4 className="font-medium text-[15px]">Shop</h4>
-                <button className="w-12 h-12 bg-[#F5F5F5] rounded-[24px] flex justify-center items-center">
+                <button
+                  aria-label="previous button"
+                  className="w-12 h-12 bg-[#F5F5F5] rounded-[24px] flex justify-center items-center"
+                >
                   <svg
                     width="25"
                     height="24"
@@ -120,7 +125,10 @@ export default function Gear() {
                     />
                   </svg>
                 </button>
-                <button className="w-12 h-12 bg-[#E5E5E5] rounded-[24px] flex justify-center items-center">
+                <button
+                  aria-label="next button"
+                  className="w-12 h-12 bg-[#E5E5E5] rounded-[24px] flex justify-center items-center"
+                >
                   <svg
                     width="25"
                     height="24"
@@ -156,7 +164,6 @@ export default function Gear() {
                   width={300}
                   height={300}
                   alt="Picture of the author"
-                  layout="responsive"
                 />
                 <div className="flex justify-between">
                   <div className="flex flex-col">
@@ -177,7 +184,6 @@ export default function Gear() {
                   width={300}
                   height={300}
                   alt="Picture of the author"
-                  layout="responsive"
                 />
                 <div className="flex justify-between">
                   <div className="flex flex-col">

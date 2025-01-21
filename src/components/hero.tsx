@@ -10,7 +10,6 @@ export default function Hero() {
             width={1344}
             height={700}
             alt="Picture of the author"
-            layout="responsive"
             priority={true}
             loading="eager"
           />
@@ -28,7 +27,10 @@ export default function Hero() {
             max.
           </h5>
           <div className="flex gap-[6px] ">
-            <button className="px-5 py-2 bg-[#111111] rounded-[30px] text-white">
+            <button
+              aria-label="notify me"
+              className="px-5 py-2 bg-[#111111] rounded-[30px] text-white"
+            >
               Notify Me
             </button>
 

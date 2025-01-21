@@ -11,7 +11,6 @@ export default function LoginSec() {
             width={53}
             height={19}
             alt="Picture of the author"
-            layout="responsive"
           />
         </div>
         <h1 className="text-lg font-bold text-center w-[50%]">
@@ -49,7 +48,10 @@ export default function LoginSec() {
             Terms of Use.
           </Link>
         </h3>
-        <button className="bg-black text-white py-2 px-5 w-full rounded text-xs">
+        <button
+          aria-label="sign up"
+          className="bg-black text-white py-2 px-5 w-full rounded text-xs"
+        >
           SIGN IN
         </button>
         <div className="flex gap-2">

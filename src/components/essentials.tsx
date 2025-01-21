@@ -12,11 +12,10 @@ export default function Essentials() {
               width={440}
               height={540}
               alt="Picture of the author"
-              layout="responsive"
               priority={true}
               loading="eager"
             />
-            <button className="absolute bottom-10 left-10 py-2 px-5 rounded-3xl bg-white">
+            <button aria-label="mens" className="absolute bottom-10 left-10 py-2 px-5 rounded-3xl bg-white">
               Men's
             </button>
           </div>
@@ -26,9 +25,8 @@ export default function Essentials() {
               width={440}
               height={540}
               alt="Picture of the author"
-              layout="responsive"
             />
-            <button className="absolute bottom-10 left-10 py-2 px-5 rounded-3xl bg-white">
+            <button aria-label="womens" className="absolute bottom-10 left-10 py-2 px-5 rounded-3xl bg-white">
               Women's
             </button>
           </div>
@@ -38,9 +36,8 @@ export default function Essentials() {
               width={440}
               height={540}
               alt="Picture of the author"
-              layout="responsive"
             />
-            <button className="absolute bottom-10 left-10 py-2 px-5 rounded-3xl bg-white">
+            <button aria-label="kids" className="absolute bottom-10 left-10 py-2 px-5 rounded-3xl bg-white">
               Kids'
             </button>
           </div>

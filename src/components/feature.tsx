@@ -11,9 +11,6 @@ export default function Feature() {
           width={1344}
           height={700}
           alt="Picture of the author"
-          layout="responsive"
-          priority={true}
-          loading="eager"
         />
         <div className="flex flex-col items-center gap-3 my-6 ">
           <h3 className="font-medium text-[54px] text-center ">

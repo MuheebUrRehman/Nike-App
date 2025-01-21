@@ -4,11 +4,8 @@ import ProductCard from "./productcard";
 import { useState, useEffect } from "react";
 
 export default function AllProducts() {
-  // const query = `*[_type == 'product'] | order(_updatedAt asc){productName,category,price,inventory,colors,status,image,description,"slug": slug.current}`;
-  // const data: products[] = await client.fetch(query);
-
   const [data, setData] = useState<products[]>([]);
-  
+
   useEffect(() => {
     const query = `*[_type == 'product'] | order(_updatedAt asc){productName,category,price,inventory,colors,status,image,description,"slug": slug.current}`;
     const fetchData = async () => {
@@ -16,8 +13,8 @@ export default function AllProducts() {
       setData(result);
     };
     fetchData();
-  }, []); 
-  
+  }, []);
+
   return (
     <section className="w-screen">
       <div className="w-[95%] mx-auto">
@@ -25,7 +22,6 @@ export default function AllProducts() {
           <h1 className="font-medium text-2xl">New (500)</h1>
           <div className="flex gap-5">
             <div className="flex items-center gap-1">
-              
               <h3>Hide Filters</h3>
               <svg
                 width="25"

@@ -13,9 +13,6 @@ export default function ProdSec(data: products) {
             width={653}
             height={653}
             alt="product1"
-            layout="responsive"
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,[base64String]"
             quality={80}
           />
         </div>
@@ -23,7 +20,10 @@ export default function ProdSec(data: products) {
           <h1 className="text-5xl font-medium">{data.productName}</h1>
           <p>{data.description}</p>
           <h3 className="font-medium text-4xl">₹ {data.price}</h3>
-          <button className="px-5 py-2 rounded-3xl w-[50%] bg-black text-white flex justify-center items-center gap-2">
+          <button
+            aria-label="Add To Cart"
+            className="px-5 py-2 rounded-3xl w-[50%] bg-black text-white flex justify-center items-center gap-2"
+          >
             {" "}
             <svg
               width="30"

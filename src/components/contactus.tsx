@@ -59,10 +59,16 @@ export default function ContactUs() {
                 faster checkout. If you're not already a Member, join us today.
               </p>
               <div className="flex w-64 justify-between ">
-                <button className="px-5 py-2 bg-[#111111] rounded-[30px] text-white">
+                <button
+                  aria-label="join us"
+                  className="px-5 py-2 bg-[#111111] rounded-[30px] text-white"
+                >
                   JOIN US
                 </button>
-                <button className="px-5 py-2 bg-[#111111] rounded-[30px] text-white">
+                <button
+                  aria-label="shop nike"
+                  className="px-5 py-2 bg-[#111111] rounded-[30px] text-white"
+                >
                   SHOP NIKE
                 </button>
               </div>

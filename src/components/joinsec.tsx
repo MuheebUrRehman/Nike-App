@@ -11,7 +11,6 @@ export default function JoinSec() {
             width={53}
             height={19}
             alt="Picture of the author"
-            layout="responsive"
           />
         </div>
         <h1 className="text-lg font-bold text-center ">BECOME A NIKE MEMBER</h1>
@@ -44,7 +43,7 @@ export default function JoinSec() {
                   border-[#E5E5E5] border-[0.5px] w-full p-2 rounded"
         />
         <input
-          type="text"
+          type="date"
           placeholder="Date of Birth"
           className="
                   border-[#E5E5E5] border-[0.5px] w-full p-2 rounded"
@@ -83,7 +82,7 @@ export default function JoinSec() {
           By creating an account, you agree to Nike's Privacy Policy and Terms
           of Use.
         </h3>
-        <button
+        <button aria-label="join us"
           type="submit"
           className="bg-black text-white py-2 px-5 w-full rounded text-xs"
         >

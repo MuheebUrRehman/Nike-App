@@ -5,7 +5,7 @@ export default function Gear() {
     <section className="w-screen">
       <div className="w-[95%] mx-auto my-14">
         <h1 className="font-medium text-[23px]">Gear Up</h1>
-        <div className="flex justify-around  ">
+        <div className="flex justify-around flex-col md:flex-row  ">
           <div>
             <div>
               <div className="flex justify-end gap-3 items-center">
@@ -60,7 +60,7 @@ export default function Gear() {
                 </button>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
               <div>
                 <Image
                   src="/gear1.png"
@@ -157,7 +157,7 @@ export default function Gear() {
                 </button>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
               <div>
                 <Image
                   src="/gear3.png"

@@ -29,7 +29,7 @@ export default function ContactUs() {
             </div>
           </div>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-col md:flex-row">
           <div className="w-3/4">
             <div className="flex flex-col gap-5 my-10">
               <h1 className="text-3xl">
@@ -174,8 +174,8 @@ export default function ContactUs() {
               </div>
             </div>
           </div>
-          <div className="border-l-2 w-1/4 flex flex-col items-center gap-9">
-            <h1 className="text-2xl text-center">CONTACT US</h1>
+          <div className="md:border-l-2 md:w-1/4 md:border-t-0 border-t-2 flex md:flex-col items-center gap-9">
+            <h1 className="md:text-2xl text-center">CONTACT US</h1>
             <div className="flex flex-col items-center text-center ">
               <Image
                 src="/contact1.png"

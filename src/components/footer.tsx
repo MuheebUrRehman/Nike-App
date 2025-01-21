@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-black w-screen">
       <div className=" flex justify-between w-[95%] mx-auto py-10">
-        <div className="grid grid-cols-3  w-[50%]">
+        <div className="grid grid-cols-3  md:w-[50%] w-[65%]">
           <div className="flex flex-col gap-2">
             <Link href="" className="text-[10px] text-white">
               Find A Store
@@ -56,7 +56,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-col md:flex-row gap-2">
           <svg
             width="30"
             height="31"

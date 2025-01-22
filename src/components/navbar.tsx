@@ -32,7 +32,7 @@ export default function Navbar() {
             </defs>
           </svg>
         </Link>
-        <div className="flex w-[30%] md:w-[50%] lg:w-[40%] justify-center md:justify-between text-lg font-medium flex-col items-center md:flex-row">
+        <div className="flex w-[40%] md:w-[50%] lg:w-[40%] justify-center md:justify-between text-lg font-medium flex-col items-center md:flex-row">
           <Link href="#">New & featured</Link>
           <Link href="#">Men</Link>
           <Link href="#">Women</Link>
@@ -40,7 +40,7 @@ export default function Navbar() {
           <Link href="#">Sales</Link>
           <Link href="#">SNKRS</Link>
         </div>
-        <div className="flex justify-between md:w-[25%] w-[35%]  items-center">
+        <div className="flex justify-between md:w-[25%] w-[40%]  items-center">
           <div className="w-[70%] h-[40px] bg-[#F5F5F5] rounded-[100px] flex items-center justify-between gap-3 overflow-hidden px-2">
             <div className=" h-[36px] flex justify-center items-center">
               <svg

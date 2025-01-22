@@ -85,8 +85,8 @@ export default function AllProducts() {
             </div>
           </div>
         </div>
-        <div className="flex">
-          <aside className="w-[25%]">
+        <div className="flex ">
+          <aside className="md:w-[25%] ">
             <div>
               <div className="flex flex-col gap-2 py-10">
                 <h3>Shoes</h3>

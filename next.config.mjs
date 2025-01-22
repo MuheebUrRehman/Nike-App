@@ -14,11 +14,11 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/_next/static/(.*)", // Match all static assets in /_next/static
+        source: "/_next/static/(.*)",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable", // Cache for one year
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

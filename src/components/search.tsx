@@ -1,7 +1,6 @@
-import { log } from "console";
 import React from "react";
 
-const Search = () => {  
+const Search = () => {
   return (
     <div className="md:w-[70%] w-[100%] h-[40px] bg-[#F5F5F5] rounded-[100px] flex items-center justify-between gap-3 overflow-hidden px-2">
       <div className="h-[36px] flex justify-center items-center">

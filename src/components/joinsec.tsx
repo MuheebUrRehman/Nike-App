@@ -82,7 +82,8 @@ export default function JoinSec() {
           By creating an account, you agree to Nike's Privacy Policy and Terms
           of Use.
         </h3>
-        <button aria-label="join us"
+        <button
+          aria-label="join us"
           type="submit"
           className="bg-black text-white py-2 px-5 w-full rounded text-xs"
         >

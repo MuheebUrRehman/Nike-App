@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
 import Promo from "@/components/promo";

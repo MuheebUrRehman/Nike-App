@@ -31,7 +31,6 @@ export default function Best() {
             <h4 className="font-medium text-[15px]">Shop</h4>
           </div>
         </div>
-
         {/* Carousel */}
         <Carousel
           opts={{
@@ -46,7 +45,6 @@ export default function Best() {
               </CarouselItem>
             ))}
           </CarouselContent>
-
           {/* Navigation Arrows */}
           <div className="flex justify-center gap-3 mt-5">
             <CarouselPrevious className="w-12 h-12 bg-[#F5F5F5] rounded-[24px] flex justify-center items-center">
@@ -64,7 +62,6 @@ export default function Best() {
                 />
               </svg>
             </CarouselPrevious>
-
             <CarouselNext className="w-12 h-12 bg-[#E5E5E5] rounded-[24px] flex justify-center items-center">
               <svg
                 width="25"

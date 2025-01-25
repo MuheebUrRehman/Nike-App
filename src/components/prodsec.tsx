@@ -4,6 +4,7 @@ import { products } from "@/app/type";
 
 export default function ProdSec(data: products) {
   const img = urlFor(data.image).format("webp").url();
+
   return (
     <section className="w-screen">
       <div className="flex md:flex-row justify-around flex-col items-center w-[95%] mx-auto mt-12 mb-52 ">

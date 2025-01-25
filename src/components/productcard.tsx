@@ -5,15 +5,10 @@ import Link from "next/link";
 
 export default function ProductCard(data: products) {
   const img = urlFor(data.image).format("webp").url();
+
   return (
     <div>
-      <Image
-        src={img}
-        width={592}
-        height={592}
-        alt="product1"
-        quality={75}
-      />
+      <Image src={img} width={592} height={592} alt="product1" quality={75} />
       <div>
         <h3 className="font-medium text-[15px] text-[#9E3500]">Just In</h3>
         <Link

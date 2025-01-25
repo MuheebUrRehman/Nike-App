@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export default function BestProductCard(data: products) {
   const img = urlFor(data.image).format("webp").url();
+  
   return (
     <div>
       <Image

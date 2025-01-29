@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Search from "./search";
 
 export default function Navbar() {
   return (
@@ -64,11 +65,7 @@ export default function Navbar() {
                 </defs>
               </svg>
             </div>
-            <input
-              type="text"
-              placeholder="Search"
-              className="font-medium text-[#CCCCCC] w-[100%] bg-transparent"
-            />
+            <Search />
           </div>
           <div className="flex justify-center items-center">
             <svg

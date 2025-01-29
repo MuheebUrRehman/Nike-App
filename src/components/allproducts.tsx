@@ -1,25 +1,52 @@
+"use client";
 import { client } from "@/sanity/lib/client";
 import { products } from "@/app/type";
 import ProductCard from "./productcard";
 import { useState, useEffect } from "react";
+import { useProductContext } from "@/app/context/ProductContext";
 
 export default function AllProducts() {
   const [data, setData] = useState<products[]>([]);
+  const [filteredData, setFilteredData] = useState<products[]>([]);
+  const { searchQuery } = useProductContext();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
   useEffect(() => {
     const query = `*[_type == 'product'] | order(_updatedAt asc){productName,category,price,inventory,colors,status,image,description,"slug": slug.current}`;
     const fetchData = async () => {
       const result: products[] = await client.fetch(query);
       setData(result);
+      setFilteredData(result);
     };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setFilteredData(data);
+    } else {
+      const filtered = data.filter((data) =>
+        data.productName
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase().trim())
+      );
+      setFilteredData(filtered);
+    }
+    setCurrentPage(1);
+  }, [searchQuery, data]);
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  const paginatedProducts = filteredData.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
     <section className="w-screen">
       <div className="w-[95%] mx-auto">
         <div className="flex justify-between items-center">
-          <h1 className="font-medium text-2xl">New (500)</h1>
+          <h1 className="font-medium text-2xl">New ({data.length})</h1>
           <div className="flex gap-5">
             <div className="flex items-center gap-1">
               <h3>Hide Filters</h3>
@@ -89,7 +116,10 @@ export default function AllProducts() {
           <aside className="md:w-[25%] ">
             <div>
               <div className="flex flex-col gap-2 py-10">
-                <h3>Shoes</h3>
+                {data.map((product) => (
+                  <h3>{product.category}</h3>
+                ))}
+                {/* <h3>Shoes</h3>
                 <h3>Sports Bras</h3>
                 <h3>Tops & T-Shirts</h3>
                 <h3>Hoodies & Sweatshirts</h3>
@@ -100,7 +130,7 @@ export default function AllProducts() {
                 <h3>Jumpsuits & Rompers</h3>
                 <h3>Skirts & Dresses</h3>
                 <h3>Socks</h3>
-                <h3>Accessories & Equipment</h3>
+                <h3>Accessories & Equipment</h3> */}
               </div>
               <div className="py-5 border-t-[1px]">
                 <div className="flex items-center justify-between">
@@ -195,13 +225,34 @@ export default function AllProducts() {
               </div>
             </div>
           </aside>
-          <div className="grid grid-cols-2 md:grid-cols-3 w-[100%] place-content-center gap-3 ml-9 mt-6 border-b-2 border-[#E5E5E5] pb-28">
-            {data.map((data) => {
-              return <ProductCard {...data} />;
-            })}
+          <div className="grid grid-cols-2 md:grid-cols-3 w-[100%] place-content-center gap-3 ml-9 mt-6 pb-10">
+            {paginatedProducts.map((product) => (
+              <ProductCard {...product} />
+            ))}
           </div>
         </div>
-        <div className=" w-[78%] flex flex-col ml-auto my-10">
+        <div className="flex justify-center mt-6 space-x-2">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+          >
+            Prev
+          </button>
+          <span className="px-4 py-2 bg-gray-100 rounded">
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
+        <div className=" w-[78%] flex flex-col ml-auto my-10 border-t-2 border-[#E5E5E5]">
           <h2 className="font-medium text-xl">Related Categories</h2>
           <div className="flex gap-2 mt-6 flex-wrap ">
             <button className="px-5 py-2 rounded-3xl border-[#CCCCCC] border-[0.5px] text-xs">

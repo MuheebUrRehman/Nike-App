@@ -1,5 +1,6 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 interface ProductContextType {
   searchQuery: string;
@@ -9,7 +10,22 @@ interface ProductContextType {
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
 
 export function ProductProvider({ children }: { children: React.ReactNode }) {
-  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  // Get initial query from URL
+  const initialQuery = searchParams.get("search") || "";
+  const [searchQuery, setSearchQuery] = useState(initialQuery);
+
+  useEffect(() => {
+    // Sync URL with search query
+    if (searchQuery.trim() !== "") {
+      const params = new URLSearchParams();
+      params.set("search", searchQuery);
+      router.replace(`/products?${params.toString()}`);
+    }
+  }, [searchQuery, router]);
 
   return (
     <ProductContext.Provider value={{ searchQuery, setSearchQuery }}>

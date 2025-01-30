@@ -1,3 +1,4 @@
+import "../lib/fontAwesome";
 import type { Metadata } from "next";
 import "./globals.css";
 import { ProductProvider } from "./context/ProductContext";

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useProductContext } from "@/app/context/ProductContext";
+import { useProductContext } from "@/context/ProductContext";
 
 const Search = () => {
   const { searchQuery, setSearchQuery } = useProductContext();

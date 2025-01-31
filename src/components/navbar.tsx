@@ -90,6 +90,7 @@ export default function Navbar() {
             </svg>
           </div>
           <div className="flex justify-center items-center">
+            <Link href={"/cart"}>
             <svg
               width="24"
               height="24"
@@ -110,6 +111,7 @@ export default function Navbar() {
                 </clipPath>
               </defs>
             </svg>
+            </Link>
           </div>
         </div>
       </div>

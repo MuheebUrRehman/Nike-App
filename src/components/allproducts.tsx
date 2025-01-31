@@ -3,7 +3,7 @@ import { client } from "@/sanity/lib/client";
 import { products } from "@/app/type";
 import ProductCard from "./productcard";
 import { useState, useEffect } from "react";
-import { useProductContext } from "@/app/context/ProductContext";
+import { useProductContext } from "@/context/ProductContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import { useSearchParams } from "next/navigation";

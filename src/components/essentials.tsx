@@ -12,8 +12,6 @@ export default function Essentials() {
               width={440}
               height={540}
               alt="Picture of the author"
-              priority={true}
-              loading="eager"
             />
             <button
               aria-label="mens"

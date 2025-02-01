@@ -6,24 +6,24 @@ export default function Footer() {
       <div className=" flex justify-between w-[95%] mx-auto py-10">
         <div className="grid grid-cols-3  md:w-[50%] w-[90%]">
           <div className="flex flex-col gap-2">
-            <Link href="" className="text-[10px] text-white">
+            <Link href="" className="text-xs text-white">
               Find A Store
             </Link>
-            <Link href="" className="text-[10px] text-white">
+            <Link href="" className="text-xs text-white">
               Become A Member
             </Link>
-            <Link href="" className="text-[10px] text-white">
+            <Link href="" className="text-xs text-white">
               Sign Up for Email
             </Link>
-            <Link href="" className="text-[10px] text-white">
+            <Link href="" className="text-xs text-white">
               Send Us Feedback
             </Link>
-            <Link href="" className="text-[9px] text-white">
+            <Link href="" className="text-xs text-white">
               Student Discounts
             </Link>
           </div>
           <div className="flex flex-col gap-2">
-            <h3 className="text-[10px] text-white">Get Help</h3>
+            <h3 className="text-xs text-white">Get Help</h3>
             <Link href="" className="text-xs text-[#7E7E7E]">
               Order Status
             </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="flex flex-col gap-2">
-            <h3 className="text-[10px] text-white">About Nike</h3>
+            <h3 className="text-xs text-white">About Nike</h3>
             <Link href="" className="text-xs text-[#7E7E7E]">
               News
             </Link>
@@ -137,7 +137,7 @@ export default function Footer() {
                 </clipPath>
               </defs>
             </svg>
-            <h3 className="text-[12px] text-white">India</h3>
+            <h3 className="text-xs text-white">India</h3>
           </div>
           <h3 className="text-xs text-[#7E7E7E]">
             © 2023 Nike, Inc. All Rights Reserved

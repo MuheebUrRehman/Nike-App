@@ -7,10 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export default function ProdSec(data: products) {
-  const { addToCart } = useCart(); // Get addToCart from context
   const img = urlFor(data.image).format("webp").url();
-
-  console.log("Product Data in ProdSec:", data); // Debugging
+  const { addToCart } = useCart(); // Get addToCart from context
 
   return (
     <section className="w-screen">
@@ -25,9 +23,7 @@ export default function ProdSec(data: products) {
           <button
             aria-label="Add To Cart"
             onClick={() => {
-              console.log("Adding product:", data); // Debugging
               addToCart({
-         
                 image: img,
                 productName: data.productName,
                 description: data.description,

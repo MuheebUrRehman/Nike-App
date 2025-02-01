@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useContext, useState, useEffect } from "react";
 import toast from "react-hot-toast";
+
 export interface Product {
   image: string;
   productName: string; // This will be our unique identifier

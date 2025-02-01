@@ -9,15 +9,15 @@ import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import { useSearchParams } from "next/navigation";
 
 export default function AllProducts() {
-  const searchParams = useSearchParams();
-  const initialSearchQuery = searchParams.get("search") || "";
   const [data, setData] = useState<products[]>([]);
   const [filteredData, setFilteredData] = useState<products[]>([]);
   const { searchQuery, setSearchQuery } = useProductContext();
-  const [currentPage, setCurrentPage] = useState(1);
+  const searchParams = useSearchParams();
+  const initialSearchQuery = searchParams.get("search") || "";
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [sortOrder, setSortOrder] = useState("");
   const [selectedPriceRanges, setSelectedPriceRanges] = useState<string[]>([]);
+  const [sortOrder, setSortOrder] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const paginatedProducts = filteredData.slice(
@@ -42,9 +42,7 @@ export default function AllProducts() {
     }
     if (searchQuery.trim() !== "") {
       filtered = filtered.filter((product) =>
-        product.productName
-          .toLowerCase()
-          .includes(searchQuery.toLowerCase().trim())
+        product.productName.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
     if (selectedCategory && selectedCategory !== "All") {
@@ -98,7 +96,7 @@ export default function AllProducts() {
               <h3 className="font-medium">Sort by Price</h3>
               <select
                 className="p-2 border rounded-md"
-                value={sortOrder}
+                // value={sortOrder}
                 onChange={(e) => setSortOrder(e.target.value)}
               >
                 <option value="">Select</option>
@@ -178,7 +176,7 @@ export default function AllProducts() {
                     <div key={value} className="flex gap-2">
                       <input
                         type="checkbox"
-                        value={value}
+                        // value={value}
                         checked={selectedPriceRanges.includes(value)}
                         onChange={(e) => {
                           const { checked, value } = e.target;

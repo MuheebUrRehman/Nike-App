@@ -42,9 +42,11 @@ export default function CartSec() {
                     src={item.image}
                   />
                   <div className="flex justify-between w-full flex-col md:flex-row">
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col gap-2">
                       <h1>{item.productName}</h1>
-                      <h1 className="text-[#757575]">{item.description}</h1>
+                      {/* <h1 className="text-[#757575]">{item.description}</h1> */}
+                      <h1 className="text-[#757575]">{item.status}</h1>
+                      <h1 className="text-[#757575]">color: {item.colors}</h1>
                       <div className="text-[#757575] flex gap-14">
                         <h2>Quantity: {item.quantity}</h2>
                       </div>

@@ -28,6 +28,8 @@ export default function ProdSec(data: products) {
                 productName: data.productName,
                 description: data.description,
                 price: data.price,
+                status: data.status,
+                colors: data.colors,
               });
             }}
             className="px-5 py-2 rounded-3xl w-[50%] bg-black text-white flex justify-center items-center gap-2"

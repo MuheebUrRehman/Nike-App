@@ -5,16 +5,10 @@ import Link from "next/link";
 
 export default function BestProductCard(data: products) {
   const img = urlFor(data.image).format("webp").url();
-  
+
   return (
     <div>
-      <Image
-        width={441}
-        height={441}
-        src={img}
-        alt=""
-        quality={75}
-      />
+      <Image width={441} height={441} src={img} alt="" quality={75} />
       <div className="flex justify-between">
         <div className="flex flex-col">
           <h3 className="font-medium text-[15px]">{data.productName}</h3>

@@ -1,4 +1,3 @@
-"use client";
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
 import AllProducts from "@/components/allproducts";

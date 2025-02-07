@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Search from "./search";
-import { Suspense } from "react";
 
 export default function Navbar() {
   return (
@@ -66,9 +65,7 @@ export default function Navbar() {
                 </defs>
               </svg>
             </div>
-            <Suspense fallback={<div>Loading...</div>}>
-              <Search />
-            </Suspense>
+            <Search />
           </div>
           <div className="flex justify-center items-center">
             <svg

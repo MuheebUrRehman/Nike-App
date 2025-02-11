@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { products } from "@/app/type";
-import Link from "next/link";
 
 export default function BestProductCard(data: products) {
   const img = urlFor(data.image).format("webp").url();

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { client } from "@/sanity/lib/client";
 import { products } from "@/app/type";
@@ -65,7 +66,15 @@ export default function AllProducts() {
     }
     setFilteredData(filtered);
     setCurrentPage(1);
-  }, [searchQuery, selectedCategory, sortOrder, selectedPriceRanges, data]);
+  }, [
+    setSearchQuery,
+    searchQuery,
+    selectedCategory,
+    sortOrder,
+    selectedPriceRanges,
+    data,
+    initialSearchQuery,
+  ]);
 
   const clearFilters = () => {
     setSearchQuery("");
@@ -96,7 +105,7 @@ export default function AllProducts() {
               <h3 className="font-medium">Sort by Price</h3>
               <select
                 className="p-2 border rounded-md"
-                // value={sortOrder}
+                value={sortOrder}
                 onChange={(e) => setSortOrder(e.target.value)}
               >
                 <option value="">Select</option>
@@ -176,7 +185,7 @@ export default function AllProducts() {
                     <div key={value} className="flex gap-2">
                       <input
                         type="checkbox"
-                        // value={value}
+                        value={value}
                         checked={selectedPriceRanges.includes(value)}
                         onChange={(e) => {
                           const { checked, value } = e.target;
@@ -196,7 +205,7 @@ export default function AllProducts() {
           </aside>
           <div className="grid grid-cols-2 md:grid-cols-3 w-[100%] place-content-center gap-3 ml-9 mt-6 pb-10">
             {paginatedProducts.map((product) => (
-              <ProductCard {...product} />
+              <ProductCard key={product.productName} {...product} />
             ))}
           </div>
         </div>

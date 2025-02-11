@@ -17,7 +17,7 @@ const Search = () => {
       <input
         type="text"
         placeholder="Search"
-        // value={localSearchQuery}
+        value={localSearchQuery}
         className="font-medium text-[#CCCCCC] w-[100%] bg-transparent"
         onChange={(e) => setLocalSearchQuery(e.target.value)}
         onKeyDown={handleKeyPress}

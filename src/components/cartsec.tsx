@@ -9,13 +9,19 @@ import Link from "next/link";
 
 export default function CartSec() {
   const [isMounted, setIsMounted] = useState(false);
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart, increaseQuantity, decreaseQuantity } =
+    useCart();
 
   useEffect(() => {
-    setIsMounted(true); // Set to true after mounting to avoid hydration issues
+    setIsMounted(true);
   }, []);
 
-  if (!isMounted) return null; // Prevent rendering until mounted
+  if (!isMounted) return null;
+
+  const subtotal = cart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   return (
     <section className="w-screen">
@@ -47,8 +53,20 @@ export default function CartSec() {
                       {/* <h1 className="text-[#757575]">{item.description}</h1> */}
                       <h1 className="text-[#757575]">{item.status}</h1>
                       <h1 className="text-[#757575]">color: {item.colors}</h1>
-                      <div className="text-[#757575] flex gap-14">
-                        <h2>Quantity: {item.quantity}</h2>
+                      <div className="text-[#757575] flex gap-2 items-center">
+                        <button
+                          onClick={() => decreaseQuantity(item.productName)}
+                          className="px-2 py-1 bg-gray-200 rounded"
+                        >
+                          -
+                        </button>
+                        <span>{item.quantity}</span>
+                        <button
+                          onClick={() => increaseQuantity(item.productName)}
+                          className="px-2 py-1 bg-gray-200 rounded"
+                        >
+                          +
+                        </button>
                       </div>
                       <div className="flex gap-4">
                         <FontAwesomeIcon
@@ -75,7 +93,7 @@ export default function CartSec() {
           <h1 className="text-2xl">Summary</h1>
           <div className="flex justify-between">
             <h3>Subtotal</h3>
-            <h3>₹ 20 890.00</h3>
+            <h3>₹ {subtotal}</h3>
           </div>
           <div className="flex justify-between">
             <h3>Estimated Delivery & Handling</h3>
@@ -83,7 +101,7 @@ export default function CartSec() {
           </div>
           <div className="flex justify-between py-4 border-y-2">
             <h3>Total</h3>
-            <h3>₹ 20 890.00</h3>
+            <h3>₹ {subtotal}</h3>
           </div>
           <button
             aria-label="Member Checkout"

@@ -36,17 +36,16 @@ export default function Best() {
           opts={{
             align: "start",
           }}
-          className="w-full"
         >
-          <CarouselContent className="flex gap-4">
+          <CarouselContent className="flex justify-around">
             {data.map((product, index) => (
-              <CarouselItem key={index} className="basis-full md:basis-1/3">
+              <CarouselItem key={index} className=" md:basis-1/3">
                 <BestProductCard {...product} />
               </CarouselItem>
             ))}
           </CarouselContent>
           {/* Navigation Arrows */}
-          <div className="flex justify-center gap-3 mt-5">
+          {/* <div className="flex justify-center gap-3 mt-5">
             <CarouselPrevious className="w-12 h-12 bg-[#F5F5F5] rounded-[24px] flex justify-center items-center">
               <svg
                 width="25"
@@ -79,7 +78,7 @@ export default function Best() {
                 </g>
               </svg>
             </CarouselNext>
-          </div>
+          </div> */}
         </Carousel>
       </div>
     </section>

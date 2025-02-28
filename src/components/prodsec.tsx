@@ -8,7 +8,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export default function ProdSec(data: products) {
   const img = urlFor(data.image).format("webp").url();
-  const { addToCart } = useCart(); // Get addToCart from context
+  const { addToCart } = useCart();
 
   return (
     <section className="w-screen">

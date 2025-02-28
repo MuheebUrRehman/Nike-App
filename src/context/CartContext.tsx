@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 export interface Product {
   image: string;
-  productName: string; // This will be our unique identifier
+  productName: string;
   description: string;
   price: number;
   quantity: number;
@@ -15,7 +15,9 @@ export interface Product {
 export interface CartContextType {
   cart: Product[];
   addToCart: (product: Omit<Product, "quantity">) => void;
-  removeFromCart: (productName: string) => void; // Changed to productName
+  removeFromCart: (productName: string) => void;
+  increaseQuantity: (productName: string) => void;
+  decreaseQuantity: (productName: string) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -61,13 +63,46 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const removeFromCart = (productName: string) => {
-    setCart((prevCart) => 
+    setCart((prevCart) =>
       prevCart.filter((item) => item.productName !== productName)
     );
   };
 
+  const increaseQuantity = (productName: string) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.productName === productName
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (productName: string) => {
+    setCart((prevCart) =>
+      prevCart.reduce((acc, item) => {
+        if (item.productName === productName) {
+          if (item.quantity > 1) {
+            acc.push({ ...item, quantity: item.quantity - 1 });
+          }
+        } else {
+          acc.push(item);
+        }
+        return acc;
+      }, [] as Product[])
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        increaseQuantity,
+        decreaseQuantity,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

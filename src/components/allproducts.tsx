@@ -90,10 +90,7 @@ export default function AllProducts() {
           <h1 className="font-medium text-2xl">New ({data.length})</h1>
           <div className="flex gap-5">
             <div className="flex items-center gap-1">
-              <button
-                onClick={clearFilters}
-                className="px-4 py-2 bg-gray-200 text-black rounded-md hover:bg-gray-300"
-              >
+              <button onClick={clearFilters}>
                 Clear Filters
                 <FontAwesomeIcon
                   icon={faSliders}
@@ -102,13 +99,12 @@ export default function AllProducts() {
               </button>
             </div>
             <div className="flex items-center gap-1">
-              <h3 className="font-medium">Sort by Price</h3>
               <select
-                className="p-2 border rounded-md"
+                className="p-1"
                 value={sortOrder}
                 onChange={(e) => setSortOrder(e.target.value)}
               >
-                <option value="">Select</option>
+                <option value="">Sort by</option>
                 <option value="lowToHigh">Low to High</option>
                 <option value="highToLow">High to Low</option>
               </select>
@@ -118,9 +114,8 @@ export default function AllProducts() {
         <div className="flex ">
           <aside className="md:w-[25%] ">
             <div>
-              <div className="flex flex-col gap-2">
-                <h3 className="font-medium">Filter by Category</h3>
-                <ul className="space-y-2">
+              <div className="flex flex-col gap-2 ">
+                <ul>
                   {[
                     "All",
                     "Men's Training Shoes",
@@ -129,11 +124,7 @@ export default function AllProducts() {
                   ].map((category) => (
                     <li
                       key={category}
-                      className={`cursor-pointer p-2 rounded ${
-                        selectedCategory === category
-                          ? "bg-gray-800 text-white"
-                          : "bg-gray-200 text-black"
-                      }`}
+                      className={`cursor-pointer p-2 rounded `}
                       onClick={() => setSelectedCategory(category)}
                     >
                       {category}
@@ -177,10 +168,8 @@ export default function AllProducts() {
                 </div>
                 <div className="flex flex-col gap-2 mt-3">
                   {[
-                    { label: "Under ₹2500", value: "0-2500" },
-                    { label: "₹2501 - ₹5000", value: "2501-5000" },
-                    { label: "₹5001 - ₹10000", value: "5001-10000" },
-                    { label: "Above ₹13000", value: "13000-" },
+                    { label: "Under ₹ 2 500.00", value: "0-2500" },
+                    { label: "₹ 2 501.00 - ₹ 7 500.00", value: "2501-7500" },
                   ].map(({ label, value }) => (
                     <div key={value} className="flex gap-2">
                       <input

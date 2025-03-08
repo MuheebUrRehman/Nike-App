@@ -1,7 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
+import { useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Gear() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
   return (
     <section className="w-screen">
       <div className="w-[95%] mx-auto my-14">
@@ -12,56 +31,22 @@ export default function Gear() {
               <div className="flex justify-end gap-3 items-center">
                 <h4 className="font-medium text-[15px]">Shop</h4>
                 <button
+                  onClick={scrollLeft}
                   aria-label="previous button"
-                  className="w-12 h-12 bg-[#F5F5F5] rounded-[24px] flex justify-center items-center"
+                  className="w-12 h-12 bg-[#F5F5F5] rounded-full flex justify-center items-center cursor-pointer active:bg-[#E5E5E5]"
                 >
-                  <svg
-                    width="25"
-                    height="24"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16.509 18.9662L9.54199 12.0002L16.509 5.0332"
-                      stroke="#CCCCCC"
-                      stroke-width="1.5"
-                    />
-                  </svg>
+                  <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
                 <button
+                  onClick={scrollRight}
                   aria-label="next button"
-                  className="w-12 h-12 bg-[#E5E5E5] rounded-[24px] flex justify-center items-center"
+                  className="w-12 h-12 bg-[#F5F5F5] rounded-full flex justify-center items-center cursor-pointer active:bg-[#E5E5E5]"
                 >
-                  <svg
-                    width="25"
-                    height="24"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clip-path="url(#clip0_1_84)">
-                      <path
-                        d="M8.83301 18.9662L15.799 12.0002L8.83301 5.0332"
-                        stroke="#111111"
-                        stroke-width="1.5"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_84">
-                        <rect
-                          width="24"
-                          height="24"
-                          fill="white"
-                          transform="translate(0.359375)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <FontAwesomeIcon icon={faChevronRight} />
                 </button>
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Image
                   src="/gear1.png"
@@ -109,52 +94,18 @@ export default function Gear() {
               <div className="flex justify-end gap-3 items-center">
                 <h4 className="font-medium text-[15px]">Shop</h4>
                 <button
+                  onClick={scrollLeft}
                   aria-label="previous button"
-                  className="w-12 h-12 bg-[#F5F5F5] rounded-[24px] flex justify-center items-center"
+                  className="w-12 h-12 bg-[#F5F5F5] rounded-full flex justify-center items-center cursor-pointer active:bg-[#E5E5E5]"
                 >
-                  <svg
-                    width="25"
-                    height="24"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16.509 18.9662L9.54199 12.0002L16.509 5.0332"
-                      stroke="#CCCCCC"
-                      stroke-width="1.5"
-                    />
-                  </svg>
+                  <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
                 <button
+                  onClick={scrollRight}
                   aria-label="next button"
-                  className="w-12 h-12 bg-[#E5E5E5] rounded-[24px] flex justify-center items-center"
+                  className="w-12 h-12 bg-[#F5F5F5] rounded-full flex justify-center items-center cursor-pointer active:bg-[#E5E5E5]"
                 >
-                  <svg
-                    width="25"
-                    height="24"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clip-path="url(#clip0_1_84)">
-                      <path
-                        d="M8.83301 18.9662L15.799 12.0002L8.83301 5.0332"
-                        stroke="#111111"
-                        stroke-width="1.5"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_84">
-                        <rect
-                          width="24"
-                          height="24"
-                          fill="white"
-                          transform="translate(0.359375)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <FontAwesomeIcon icon={faChevronRight} />
                 </button>
               </div>
             </div>

@@ -25,8 +25,8 @@ export default function CartSec() {
 
   return (
     <section className="w-screen">
-      <div className="w-[90%] mx-auto my-10 flex justify-between">
-        <div className="w-[70%]">
+      <div className="w-[90%] mx-auto my-10 flex justify-between flex-col md:flex-row">
+        <div className="md:w-[70%]">
           <div className="bg-[#F7F7F7] p-5 flex gap-1 flex-col">
             <h1 className="text-sm">Free Delivery</h1>
             <div className="text-xs flex gap-4">
@@ -50,7 +50,6 @@ export default function CartSec() {
                   <div className="flex justify-between w-full flex-col md:flex-row">
                     <div className="flex flex-col gap-2">
                       <h1>{item.productName}</h1>
-                      {/* <h1 className="text-[#757575]">{item.description}</h1> */}
                       <h1 className="text-[#757575]">{item.status}</h1>
                       <h1 className="text-[#757575]">color: {item.colors}</h1>
                       <div className="text-[#757575] flex gap-2 items-center">
@@ -89,7 +88,7 @@ export default function CartSec() {
             )}
           </div>
         </div>
-        <div className="w-[28%] flex flex-col gap-4">
+        <div className="md:w-[28%] flex flex-col gap-4">
           <h1 className="text-2xl">Summary</h1>
           <div className="flex justify-between">
             <h3>Subtotal</h3>

@@ -4,7 +4,7 @@ import Link from "next/link";
 const CartIcon = () => {
   return (
     <div className="flex items-center">
-      <Link href="/cart">
+      <Link href="/cart" aria-label="Cart">
         <svg
           width="24"
           height="24"

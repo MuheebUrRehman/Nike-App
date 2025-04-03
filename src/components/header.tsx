@@ -26,7 +26,7 @@ export default function Header() {
             Find a Store
           </Link>
           <Link
-            href="#"
+            href="/contact"
             className="font-medium text-[11px] border-r-[1px] border-black px-3"
           >
             Help

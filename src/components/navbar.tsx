@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="w-screen bg-white shadow">
       <div className="w-[95%] mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <Link href="/" className="w-[80px]">
+          <Link href="/" aria-label="Home" className="w-[80px]">
             <svg
               width="79"
               height="79"

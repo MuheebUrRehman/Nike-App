@@ -14,7 +14,6 @@ export default function Best() {
 
   useEffect(() => {
     const query = `*[_type == 'product'] | order(_updatedAt asc){productName,category,price,inventory,colors,status,image,description,"slug": slug.current}`;
-
     const fetchData = async () => {
       const result: products[] = await client.fetch(query);
       setData(result);
@@ -24,13 +23,19 @@ export default function Best() {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      carouselRef.current.scrollBy({
+        left: -carouselRef.current.clientWidth,
+        behavior: "smooth",
+      });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      carouselRef.current.scrollBy({
+        left: carouselRef.current.clientWidth,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -62,7 +67,7 @@ export default function Best() {
           className="mt-6 flex gap-4 overflow-x-auto scroll-smooth scrollbar-hide"
         >
           {data.map((product, index) => (
-            <div key={index} className="flex-shrink-0 md:w-1/3 w-1/2">
+            <div key={index} className="flex-shrink-0 md:w-1/3 w-full">
               <BestProductCard {...product} />
             </div>
           ))}

@@ -22,7 +22,7 @@ export default function Hero() {
               Nike Air Max Pulse
             </h1>
           </div>
-          <h5 className="text-[15px] w-[50%] text-center">
+          <h5 className="text-[15px] w-[90%] md:w-[40%] text-center">
             Extreme comfort. Hyper durable. Max volume. Introducing the Air Max
             Pulse —designed to push you past your limits and help you go to the
             max.

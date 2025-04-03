@@ -6,7 +6,7 @@ export default function BestProductCard(data: products) {
   const img = urlFor(data.image).format("webp").url();
 
   return (
-    <div>
+    <div className="w-[450px]">
       <Image width={441} height={441} src={img} alt="" quality={75} />
       <div className="flex justify-between">
         <div className="flex flex-col">

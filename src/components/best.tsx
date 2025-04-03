@@ -41,7 +41,7 @@ export default function Best() {
 
   return (
     <section className="w-screen">
-      <div className="md:w-[95%] mx-auto w-6/12 my-10">
+      <div className="md:w-[95%] mx-auto w-[80%] my-10">
         <div className="flex justify-between items-center">
           <h3 className="font-medium text-[22px]">Best of Air Max</h3>
           <div className="flex justify-center gap-3 items-center">
